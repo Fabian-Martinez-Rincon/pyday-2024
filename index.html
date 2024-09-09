@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,25 +16,85 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnk2NThnYmxuOXV5YWlzYjBibWlpbzh3MGI5a3hkMnZ6cXB1MmowcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a5viI92PAF89q/giphy.gif"> 
+					<h3>Curiosidades Web Scraping</h3>
+					<p>
+						<small>Creado por <a href="https://github.com/Fabian-Martinez-Rincon">Fabian Martinez Rincon</a></small>
+					</p>
+				</section>
+				<section data-background="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnNlcGltejQyNXV3OXV3cnZ2ZG42aXpncGRtdHNmOTcwM2NwMGE0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduGzkdvam26MrXG/giphy.gif">
+					<h3>Todo legal</h3>
+					<p>
+						Proceso de "extracción" de contenidos y datos de sitios web mediante software.
+					</p>
+				</section>
+				<section >
+					<section>
+						<h2>Imaginemos</h2>
+						<p>Nos queremos quedar con todas las peliculas o series que se encuentran en una pagina por ejemplo...</p>
+						<a href="#/2/1" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="378" data-src="https://github.com/user-attachments/assets/41110097-ca00-43da-9c7a-8cc473d0ee3e" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://github.com/user-attachments/assets/39236ba3-e0f2-4673-b81a-38f7bdfc9cef">
+							<h3>Pluto TV</h3>
+					</section>
+					<section>
+						<h3>Ejemplo Basico</h3>
+						<ul>
+							<li>Tenemos 2 categorias</li>
+							<li>Cada categoria tiene 5 Peliculas</li>
+							<li>En total tenemos 10 peliculas distintas</li>
+							<li>Tenemos la referencia a todas las peliculas</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>Categoria 1 (5 Peliculas)</h3>
+					<p>Hasta el momento solo tenemos las referencias a las peliculas, ahora nos queda poder extraer los datos de las mismas mediante consultas</p>
+						<ul>
+							<li>Tarda 10 minutos cada peliculas en poder consultar los datos</li>
+							<li>Tardarias 50 minutos en consultar todo</li>
+						</ul>
+				</section>
+				<section>
+					<h3>¿Esperamos a que una consulta termine para poder empezar la otra?</h3>
+				</section>
+				<section>
+					<section>
+						<h3>NO</h3>
+						<p>Hacemos las consultas de manera iterativa pero, no esperamos a que una consulta termine para poder empezar otra	</p>
+					</section>
+				<section>
+					<h3>Pov sos el servidor</h3>
+					<a href="#/2/1" class="navigate-down">
+						<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="678" data-src="./static/giphy.webp" alt="Down arrow">
+					</a>
+				</section>
+				</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
 		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
+
 		</script>
 	</body>
 </html>
