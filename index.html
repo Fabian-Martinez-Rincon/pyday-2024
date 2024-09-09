@@ -17,7 +17,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnk2NThnYmxuOXV5YWlzYjBibWlpbzh3MGI5a3hkMnZ6cXB1MmowcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a5viI92PAF89q/giphy.gif"> 
-					<h3>Curiosidades Web Scraping</h3>
+					<h3>Web Scraping</h3>
 					<p>
 						<small>Creado por <a href="https://github.com/Fabian-Martinez-Rincon">Fabian Martinez Rincon</a></small>
 					</p>
@@ -62,16 +62,42 @@
 				</section>
 				<section>
 					<section>
-						<h3>NO</h3>
+						<h2>NO</h2>
 						<p>Hacemos las consultas de manera iterativa pero, no esperamos a que una consulta termine para poder empezar otra	</p>
 					</section>
-				<section>
-					<h3>Pov sos el servidor</h3>
-					<a href="#/2/1" class="navigate-down">
-						<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="678" data-src="./static/giphy.webp" alt="Down arrow">
-					</a>
+					<section>
+						<h3>El servidor recibiendo consultas</h3>
+						<a href="#/2/1" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="678" data-src="./static/giphy.webp" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3JzZ25rZnE3eHF2Ym9wNDNwdTI4MDdpMThrc3p6ZHhvNnY3MTZ5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6Zt12ZDm6cUTkBQ4/giphy.gif">
+						<h3>A medida que van terminando, van saliendo</h3>
+					</section>
 				</section>
+				
+				<section><h2>¿Como se hace esto con python?</h2>
 				</section>
+			<section data-auto-animate>
+				<h2 data-id="code-title">Ejemplo</h2>
+				<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>
+					def fetch_html(url, timeout=10):
+						response = requests.get(url, timeout=timeout)
+						if response.status_code == 200:
+							return response.text
+						return None
+				</code></pre>
+			</section>
+				<section data-auto-animate>
+					<h2 data-id="code-title">Ejemplo</h2>
+					<pre data-id="code-animation"><code class="hljs python" data-trim data-line-numbers>
+						async def fetch_html(session, url, timeout=10):
+							async with session.get(url, timeout=timeout) as response:
+								if response.status == 200:
+									return await response.text()
+					</code></pre>
+				</section>
+
 			</div>
 		</div>
 
